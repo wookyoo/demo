@@ -2,13 +2,14 @@ name: CD Pipeline
 
 on:
   workflow_run:
-    workflows: [ "CI Pipeline" ]
+    workflows: ["CI Pipeline"]
     types:
         - completed
 
 jobs:
   build:
     runs-on: self-hosted
+    
     steps:
       - name: Pull Docker Image
         run: sudo docker pull kangwookyoo/docker-cicd:latest

@@ -33,8 +33,8 @@ jobs:
     runs-on: [aws-ec2]
     steps:
       - name: Pull Image from docker hub
-        run: docker pull wookyoo/demo:latest
+        run: docker pull kangwookyoo/docker-cicd:latest
       - name: Delete old container
-        run: docker rm -f demo-container
+        run: docker rm -f docker-cicd-container
       - name: Run docker container
-        run: docker run -d -p 8080:8080 --name demo-container wookyoo/demo
+        run: docker run -d -p 8080:8080 --name docker-cicd-container kangwookyoo/docker-cicd
